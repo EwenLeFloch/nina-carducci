@@ -125,6 +125,24 @@ body {
 	height: 100%;
 	object-fit: cover;
 	padding: 0.5em;
+	cursor: pointer;
+}
+.gallery-item:hover {
+	scale: 1.01;
+}
+.modal-dialog {
+	position: static;
+}
+.modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: auto;
+}
+.lightboxImage {
+	max-width: 50vw;
+	max-height: 95vh;
 }
 .mg-prev,
 .mg-next {
