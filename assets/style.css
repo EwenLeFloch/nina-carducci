@@ -62,7 +62,7 @@ body {
 }
 
 .picture {
-	flex: 1;
+	width: 500px;
 	margin: 0 20px;
 	z-index: 0;
 }
@@ -263,9 +263,6 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 1180px) {
-	.picture {
-		flex: 2;
-	}
 	#about,
 	#contact .container {
 		align-items: center;
@@ -285,7 +282,7 @@ input[type="submit"] {
 		flex-direction: column;
 	}
 	.picture {
-		width: 50%;
+		width: 400px;
 	}
 	.picture.left::before {
 		width: 100%;
@@ -373,5 +370,6 @@ input[type="submit"] {
 	}
 	.picture {
 		width: 80%;
+		max-width: 320px;
 	}
 }

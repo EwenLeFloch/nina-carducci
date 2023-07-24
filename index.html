@@ -8,7 +8,7 @@
 			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
 			crossorigin="anonymous"
 		/>
-		<link rel="stylesheet" href="./assets/style.min.css" />
+		<link rel="stylesheet" href="./assets/style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -149,11 +149,13 @@
 				<img
 					src="./assets/images/nina-carducci.webp"
 					srcset="
-						./assets/images/nina-carducci.webp      1920w,
-						./assets/images/nina-carducci-1440.webp 1440w,
-						./assets/images/nina-carducci-650.webp   650w,
-						./assets/images/nina-carducci-320.webp   320w
+						./assets/images/nina-carducci.webp     500w,
+						./assets/images/nina-carducci-400.webp 400w,
+						./assets/images/nina-carducci-320.webp 320w
 					"
+					sizes="(max-width: 1000px) 400px,
+					(max-width: 650px) 320px,
+					500px"
 					alt="Nina Carducci"
 					loading="lazy"
 				/>
