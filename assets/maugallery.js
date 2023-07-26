@@ -125,18 +125,13 @@
 		openLightBox(element, lightboxId) {
 			$(`#${lightboxId}`)
 				.find(".lightboxImage")
-				.attr("src", element.attr("src").replace(".webp", ".jpg"))
-				.attr("alt", element.attr("alt"))
-				.attr("loading", element.attr("loading"));
+				.attr("src", element.attr("src"));
 			$(`#${lightboxId}`).modal("toggle");
 		},
 		prevImage() {
 			let activeImage = null;
 			$("img.gallery-item").each(function () {
-				if (
-					$(this).attr("src") ===
-					$(".lightboxImage").attr("src").replace(".jpg", ".webp")
-				) {
+				if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
 					activeImage = $(this);
 				}
 			});
@@ -171,18 +166,12 @@
 			next =
 				imagesCollection[index - 1] ||
 				imagesCollection[imagesCollection.length - 1];
-			$(".lightboxImage").attr(
-				"src",
-				$(next).attr("src").replace(".webp", ".jpg")
-			);
+			$(".lightboxImage").attr("src", $(next).attr("src"));
 		},
 		nextImage() {
 			let activeImage = null;
 			$("img.gallery-item").each(function () {
-				if (
-					$(this).attr("src") ===
-					$(".lightboxImage").attr("src").replace(".jpg", ".webp")
-				) {
+				if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
 					activeImage = $(this);
 				}
 			});
@@ -215,40 +204,37 @@
 				}
 			});
 			next = imagesCollection[index + 1] || imagesCollection[0];
-			$(".lightboxImage").attr(
-				"src",
-				$(next).attr("src").replace(".webp", ".jpg")
-			);
+			$(".lightboxImage").attr("src", $(next).attr("src"));
 		},
 		createLightBox(gallery, lightboxId, navigation) {
 			gallery.append(`<div class="modal fade" id="${
 				lightboxId ? lightboxId : "galleryLightbox"
 			}" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            ${
-								navigation
-									? '<div class="mg-prev" style="cursor:pointer;position:absolute;top:50%;left:-15px;background:white;"><</div>'
-									: '<span style="display:none;" />'
-							}
-                            <img class="lightboxImage img-fluid" alt="Contenu de l'image affichée dans la modale au clique"/>
-                            ${
-								navigation
-									? '<div class="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;}">></div>'
-									: '<span style="display:none;" />'
-							}
-                        </div>
-                    </div>
-                </div>
-            </div>`);
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-body">
+                              ${
+									navigation
+										? '<div class="mg-prev" style="cursor:pointer;position:absolute;top:50%;left:-15px;background:white;"><</div>'
+										: '<span style="display:none;" />'
+								}
+                              <img class="lightboxImage img-fluid" alt="Contenu de l'image affichée dans la modale au clique"/>
+                              ${
+									navigation
+										? '<div class="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;}">></div>'
+										: '<span style="display:none;" />'
+								}
+                          </div>
+                      </div>
+                  </div>
+              </div>`);
 		},
 		showItemTags(gallery, position, tags) {
 			var tagItems =
 				'<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
 			$.each(tags, function (index, value) {
 				tagItems += `<li class="nav-item active">
-                <span class="nav-link"  data-images-toggle="${value}">${value}</span></li>`;
+                  <span class="nav-link"  data-images-toggle="${value}">${value}</span></li>`;
 			});
 			var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
 
