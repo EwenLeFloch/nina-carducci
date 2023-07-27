@@ -26,15 +26,31 @@
 			content="Nina Carducci est une photographe spécialisée dans les concerts, les mariages, les portraits et les photos d'entreprise."
 		/>
 
-		<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" />
+		<link
+			rel="stylesheet"
+			href="./assets/bootstrap/bootstrap.min.css"
+			media="all"
+		/>
 		<link rel="stylesheet" href="./assets/style.min.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
+			rel="preload"
+			as="style"
 			href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
+		/>
+		<link
 			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
+			media="print"
+			onload="this.media='all'"
 		/>
 
+		<noscript>
+			<link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap"
+			/>
+		</noscript>
 		<!-- Rich Snippets -->
 		<script type="application/ld+json">
 			{
